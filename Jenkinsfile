@@ -40,4 +40,11 @@ pipeline {
         // }
     }
 
+    post {
+        always {
+            // Cleanup steps
+            sh 'docker stop my-mongo-container && docker rm my-mongo-container'
+        }
+    }
+
 }
