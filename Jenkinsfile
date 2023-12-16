@@ -27,7 +27,7 @@ pipeline {
         
         stage('Build and Run Database') {
             steps {
-                sh 'docker run -d -p 27017:27017 --name my-mongo-container mongo'
+                sh 'docker run -d -p 27017:27017 --name my-mongo-container -v ./data:/data/db mongo'
             }
         }
 
