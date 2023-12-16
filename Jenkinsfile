@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build and Run Database') {
             steps {
-                sh 'docker run -d -p 27017:27017 --name my-mongo-container --network ${NETWORK_NAME} -v ./data:/data/db/initialData mongo'
+                sh 'docker run -d -p 27017:27017 --name my-mongo-container -v ./data:/data/db/initialData mongo'
                 // script {
                 //     docker.image('mongo').withRun('-p 27017:27017 --name my-mongo-container --network ${NETWORK_NAME} -v data:/data/db -v ./data:/data/db/initialData') { c ->
                 //         // Database container is running
