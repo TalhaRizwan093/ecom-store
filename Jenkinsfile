@@ -31,15 +31,17 @@ pipeline {
             }
         }
 
-        // stage('Build and Run Frontend') {
-        //     steps {
-        //         script {
-        //             docker.image(FRONTEND_IMAGE).withRun("--name my-react-container --network ${NETWORK_NAME} -p 3001:3000 --link my-express-container:backend") { c ->
-        //                 // Frontend container is running
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Build and Run Frontend') {
+            steps {
+                    sh 'docker build -t my-react-image ./e-comerce-frontend'
+                    sh 'docker run -d -p 3001:3000 --name my-react-container --link my-express-container:backend my-react-image'
+                // script {
+                //     docker.image(FRONTEND_IMAGE).withRun("--name my-react-container --network ${NETWORK_NAME} -p 3001:3000 --link my-express-container:backend") { c ->
+                //         // Frontend container is running
+                //     }
+                // }
+            }
+        }
     }
 
     post {
@@ -47,6 +49,7 @@ pipeline {
             // Cleanup steps
             sh 'docker stop my-mongo-container && docker rm my-mongo-container'
             sh 'docker stop my-express-container && docker rm my-express-container'
+            sh 'docker stop my-react-container && docker rm my-react-container'
         }
     }
 
