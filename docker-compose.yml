@@ -1,0 +1,37 @@
+services:
+  database:
+    image: mongo
+    container_name: my-mongo-container
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+    volumes:
+      - data:/data/db
+      - ./data:/data/db/initialData
+
+  backend:
+    image: toosterr007/e-commerce-store_backend
+    container_name: my-express-container
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://database:27017/ecom
+    depends_on:
+      - database
+    networks:
+      - my-network
+
+  frontend:
+    image: toosterr007/e-commerce-store_frontend
+    container_name: my-react-container
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+networks:
+  my-network:
+volumes:
+  data:
