@@ -19,15 +19,16 @@ pipeline {
             }
         }
 
-        // stage('Build and Run Backend') {
-        //     steps {
-        //         script {
-        //             docker.image(BACKEND_IMAGE).withRun("--name my-express-container --network ${NETWORK_NAME} -p 3000:3000 --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom") { c ->
-        //                 // Backend container is running
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Build and Run Backend') {
+            steps {
+                    sh 'docker run --name my-express-container -p 3000:3000 --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom'
+                // script {
+                //     docker.image(BACKEND_IMAGE).withRun("--name my-express-container --network ${NETWORK_NAME} -p 3000:3000 --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom") { c ->
+                //         // Backend container is running
+                //     }
+                // }
+            }
+        }
 
         // stage('Build and Run Frontend') {
         //     steps {
@@ -40,11 +41,11 @@ pipeline {
         // }
     }
 
-    post {
-        always {
-            // Cleanup steps
-            sh 'docker stop my-mongo-container && docker rm my-mongo-container'
-        }
-    }
+    // post {
+    //     always {
+    //         // Cleanup steps
+    //         sh 'docker stop my-mongo-container && docker rm my-mongo-container'
+    //     }
+    // }
 
 }
