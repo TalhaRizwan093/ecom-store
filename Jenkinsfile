@@ -25,9 +25,11 @@ pipeline {
             }
         }
         
-        stage('Build and Run Database') {
+        stage('Run and Persist Database') {
             steps {
                 sh 'docker run -d -p 27017:27017 --name my-mongo-container -v ./data:/data/db mongo'
+                sh 'docker exec -it my-mongo-container /bin/bash'
+                sh 'mongoimport --host localhost --port 27017 --db ecom --collection products --file /data/db/data.json --jsonArray'
             }
         }
 
