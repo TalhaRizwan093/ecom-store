@@ -21,7 +21,7 @@ pipeline {
 
         stage('Remove Images') {
             steps {
-                sh 'docker rmi my-express-image my-react-image || true'
+                sh 'docker rmi my-express-image my-react-image mongo || true'
             }
         }
         
