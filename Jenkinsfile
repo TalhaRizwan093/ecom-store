@@ -2,6 +2,23 @@ pipeline {
     agent any
     
     stages {
+
+        stage('Stop and Remove Containers') {
+            steps {
+                script {
+                    // Stop and remove existing containers if they are running
+                    sh 'docker ps -q --filter "name=my-mongo-container" | xargs docker stop || true'
+                    sh 'docker ps -q --filter "name=my-mongo-container" | xargs docker rm || true'
+                    
+                    sh 'docker ps -q --filter "name=my-express-container" | xargs docker stop || true'
+                    sh 'docker ps -q --filter "name=my-express-container" | xargs docker rm || true'
+                    
+                    sh 'docker ps -q --filter "name=my-react-container" | xargs docker stop || true'
+                    sh 'docker ps -q --filter "name=my-react-container" | xargs docker rm || true'
+                }
+            }
+        }
+        
         stage('Build and Run Database') {
             steps {
                 sh 'docker run -d -p 27017:27017 --name my-mongo-container mongo'
@@ -34,12 +51,4 @@ pipeline {
         }
     }
 
-    // post {
-    //     always {
-    //         // Cleanup steps
-    //         sh 'docker stop my-mongo-container && docker rm my-mongo-container'
-    //         sh 'docker stop my-express-container && docker rm my-express-container'
-    //         sh 'docker stop my-react-container && docker rm my-react-container'
-    //     }
-    // }
 }
