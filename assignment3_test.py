@@ -40,3 +40,13 @@ title_web = title_web_nav.find_elements(By.TAG_NAME, "h2")
 
 print(title_web[0].text)
 assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
+
+login_button_nav = browser.find_element(By.CLASS_NAME, "navbar__links")
+login_button = login_button_nav.find_elements(By.TAG_NAME, "li")
+login_btn = login_button[2]
+login_btn_a_tag = login_btn.find_element(By.TAG_NAME, "a")
+login_btn_a_tag.click()
+signIn_container = browser.find_element(By.CLASS_NAME, "innerContainer")
+signIn_title = signIn_container[0]
+signIn_title_text = signIn_title[1]
+assert signIn_title_text.text == "Sign In"
