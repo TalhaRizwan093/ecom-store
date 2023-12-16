@@ -7,14 +7,14 @@ pipeline {
             steps {
                 script {
                     // Stop and remove existing containers if they are running
-                    sh 'docker ps -q --filter "name=my-mongo-container" | xargs docker stop || true'
-                    sh 'docker ps -q --filter "name=my-mongo-container" | xargs docker rm || true'
+                    sh 'docker ps -q --filter "name=my-mongo-container" | xargs docker stop my-mongo-container || true'
+                    sh 'docker ps -q --filter "name=my-mongo-container" | xargs docker rm my-mongo-container || true'
                     
-                    sh 'docker ps -q --filter "name=my-express-container" | xargs docker stop || true'
-                    sh 'docker ps -q --filter "name=my-express-container" | xargs docker rm || true'
+                    sh 'docker ps -q --filter "name=my-express-container" | xargs docker stop my-express-container || true'
+                    sh 'docker ps -q --filter "name=my-express-container" | xargs docker rm my-express-container || true'
                     
-                    sh 'docker ps -q --filter "name=my-react-container" | xargs docker stop || true'
-                    sh 'docker ps -q --filter "name=my-react-container" | xargs docker rm || true'
+                    sh 'docker ps -q --filter "name=my-react-container" | xargs docker stop my-react-container || true'
+                    sh 'docker ps -q --filter "name=my-react-container" | xargs docker rm my-react-container || true'
                 }
             }
         }
