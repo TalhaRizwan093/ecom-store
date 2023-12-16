@@ -15,7 +15,7 @@ pipeline {
                 //     docker.image('mongo').withRun('-p 27017:27017 --name my-mongo-container --network ${NETWORK_NAME} -v data:/data/db -v ./data:/data/db/initialData') { c ->
                 //         // Database container is running
                 //     }
-                }
+                //}
             }
         }
 
