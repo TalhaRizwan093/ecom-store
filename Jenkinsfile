@@ -53,7 +53,7 @@ pipeline {
 
         stage('Deploy Frontend') {
             steps {
-                sh 'docker run -d -p 3001:3000 --name my-react-container --link my-express-container:backend my-react-image'
+                sh 'docker run -d -p 3001:3000 --name my-react-container --link my-express-container:backend -e BACKEND_URI=http://44.220.249.251:3000 my-react-image'
             }
         }
     }
