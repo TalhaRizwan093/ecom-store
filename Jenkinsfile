@@ -22,7 +22,7 @@ pipeline {
         stage('Build and Run Backend') {
             steps {
                     sh 'docker build -t my-express-image ./e-comerce-backend'
-                    sh 'docker run -d -p 3000:3000 --name my-express-container --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom '
+                    sh 'docker run -d -p 3000:3000 --name my-express-container --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom my-express-image'
                 // script {
                 //     docker.image(BACKEND_IMAGE).withRun("--name my-express-container --network ${NETWORK_NAME} -p 3000:3000 --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom") { c ->
                 //         // Backend container is running
