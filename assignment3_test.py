@@ -44,7 +44,7 @@ assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
 
 element = browser.find_element(By.XPATH, "//a[@href='/signin']")
 print(element)
-
+element.click()
 signIn_container = browser.find_element(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title_text = signIn_title[1]
