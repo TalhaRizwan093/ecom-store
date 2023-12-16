@@ -46,4 +46,4 @@ signIn_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title = signIn_title.find_elements(By.TAG_NAME, "p")
 print(signIn_title)
-assert signIn_title.text == "Sign In"
+assert signIn_title[0].text == "Sign In"
