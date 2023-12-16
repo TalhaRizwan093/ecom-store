@@ -15,7 +15,9 @@ browser.get("http://44.220.249.251:3001/")
 
 browser.implicitly_wait(0.5)
 
-title_web = browser.find_element(By.CLASS_NAME, "navbar__logo")
+title_web_nav = browser.find_element(By.CLASS_NAME, "navbar__logo")
+title_web = title_web_nav.find_element(By.TAG_NAME, "h1")
+
 
 
 # first_name = browser.find_element(By.ID, "input-firstname")
@@ -37,4 +39,4 @@ title_web = browser.find_element(By.CLASS_NAME, "navbar__logo")
 # continue_button.click()
 
 print(title_web)
-assert true
+assert title_web.text == "Assignment 3 Ecommerce Jenkins"
