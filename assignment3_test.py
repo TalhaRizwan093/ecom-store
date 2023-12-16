@@ -41,10 +41,7 @@ title_web = title_web_nav.find_elements(By.TAG_NAME, "h2")
 print(title_web[0].text)
 assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
 
-
-element = browser.find_element(By.XPATH, "//a[@href='/signin']")
-print(element)
-element.click()
+browser.get("http://44.220.249.251:3001/signin")
 signIn_container = browser.find_element(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title_text = signIn_title[1]
