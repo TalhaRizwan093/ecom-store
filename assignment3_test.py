@@ -39,4 +39,4 @@ title_web = title_web_nav.find_elements(By.TAG_NAME, "h2")
 # continue_button.click()
 
 print(title_web)
-assert title_web.text == "Assignment 3 Ecommerce Jenkins"
+assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
