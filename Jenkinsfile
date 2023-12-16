@@ -27,7 +27,7 @@ pipeline {
         
         stage('Run and Persist Database') {
             steps {
-                sh 'docker run -d -p 27017:27017 --name my-mongo-container -v ./data:/data/db mongo'
+                sh 'docker run -d -p 27017:27017 --name my-mongo-container -v ./data:/data/db mongo --repair'
             }
         }
 
