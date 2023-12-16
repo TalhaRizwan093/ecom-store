@@ -23,13 +23,13 @@ pipeline {
 
         stage('Deploy Backend') {
             steps {
-                sh 'docker run -p 3000:3000 --name my-express-container --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom my-express-image'
+                sh 'docker run -d -p 3000:3000 --name my-express-container --link my-mongo-container:database -e MONGO_URI=mongodb://database:27017/ecom my-express-image'
             }
         }
 
         stage('Deploy Frontend') {
             steps {
-                sh 'docker run -p 3001:3000 --name my-react-container --link my-express-container:backend my-react-image'
+                sh 'docker run -d -p 3001:3000 --name my-react-container --link my-express-container:backend my-react-image'
             }
         }
     }
