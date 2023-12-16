@@ -15,7 +15,7 @@ browser.get("http://44.220.249.251:3001/")
 
 browser.implicitly_wait(0.5)
 
-title_web = browser.find_element_by_class_name("navbar__logo")
+title_web = browser.find_element(By.CLASS_NAME, "navbar__logo")
 
 
 # first_name = browser.find_element(By.ID, "input-firstname")
