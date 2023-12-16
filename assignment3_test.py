@@ -42,7 +42,7 @@ print(title_web[0].text)
 assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
 
 browser.get("http://44.220.249.251:3001/signin")
-signIn_container = browser.find_element(By.CLASS_NAME, "innerContainer")
+signIn_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title_text = signIn_title[1]
 assert signIn_title_text.text == "Sign In"
