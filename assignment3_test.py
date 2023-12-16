@@ -46,8 +46,8 @@ login_button = login_button_nav.find_elements(By.TAG_NAME, "li")
 login_btn = login_button[2]
 print(login_btn)
 login_btn_a_tag = login_btn.find_element(By.TAG_NAME, "a")
-print(login_btn_a_tag)
-login_btn.click()
+print(login_btn_a_tag.text)
+login_btn_a_tag.click()
 signIn_container = browser.find_element(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title_text = signIn_title[1]
