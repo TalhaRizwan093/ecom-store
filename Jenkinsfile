@@ -56,6 +56,7 @@ pipeline {
                 sh 'docker run -d -p 3001:3000 --name my-react-container --link my-express-container:backend my-react-image'
             }
         }
+        
 
         stage('Test Frontend') {
             steps {
