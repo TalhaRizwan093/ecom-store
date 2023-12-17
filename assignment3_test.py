@@ -96,6 +96,8 @@ print(nav_links_logout_li)
 nav_links_logout = nav_links_logout_li[2]
 print(nav_links_logout)
 nav_links_logout_text = nav_links_logout.find_element(By.TAG_NAME, "p")
+logout_text = nav_links_logout_text.get_attribute("innerHTML")
+assert logout_text == "Logout"
 print(nav_links_logout_text.get_attribute("innerHTML"))
 print("logout", nav_links_logout_text)
 
