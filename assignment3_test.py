@@ -85,11 +85,16 @@ email_signin = browser.find_element(By.NAME, "email")
 email_signin.send_keys("talha@gmail.com")
 password_signin = browser.find_element(By.NAME, "password")
 password_signin.send_keys("abc123")
+input_container = browser.find_element(By.CLASS_NAME, "innerContainer")
+inputs = input_container.find_elements(By.TAG_NAME, "input")
+submit_input = inputs[2]
+submit_input.click()
 browser.implicitly_wait(2)
 nav_links = browser.find_element(By.CLASS_NAME, "navbar__links")
 nav_links_logout_li = nav_links.find_elements(By.TAG_NAME, "li")
 print(nav_links_logout_li)
 nav_links_logout = nav_links_logout_li[2]
+print(nav_links_logout)
 nav_links_logout_text = nav_links_logout.find_elements(By.TAG_NAME, "p")
 print(nav_links_logout_text)
 
