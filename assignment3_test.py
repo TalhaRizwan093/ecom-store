@@ -88,6 +88,7 @@ password_signin.send_keys("abc123")
 browser.implicitly_wait(2)
 nav_links = browser.find_element(By.CLASS_NAME, "navbar__links")
 nav_links_logout_li = nav_links.find_elements(By.TAG_NAME, "li")
+print(nav_links_logout_li)
 nav_links_logout = nav_links_logout_li[2]
 nav_links_logout_text = nav_links_logout.find_elements(By.TAG_NAME, "p")
 print(nav_links_logout_text)
