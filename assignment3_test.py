@@ -64,3 +64,4 @@ password.send_keys("abc123")
 print(password)
 alert = browser.switchTo().alert(); 
 alertMessage= browser.switchTo().alert().getText();
+print(alertMessage)
