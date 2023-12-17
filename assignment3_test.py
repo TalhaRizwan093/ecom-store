@@ -71,6 +71,6 @@ print(submit_input)
 # submit = browser.find_element(By.TYPE, "submit")
 # print(submit)
 # submit.click()
-alert = WebDriverWait(browser, 5).until(EC.alert_is_present)
+alert = WebDriverWait(browser, 5).until(EC.alert_is_present())
 alert_text = alert.text
 print(alert_text)
