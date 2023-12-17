@@ -11,7 +11,7 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-browser.get("http://44.220.249.251:3001/")
+browser.get("http://44.213.60.56:3001/")
 
 browser.implicitly_wait(0.5)
 
