@@ -5,6 +5,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+import time 
+
 
 options = Options()
 options.add_argument('--headless')
@@ -12,9 +14,9 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-browser.implicitly_wait(4)
+time.sleep(10)
 
-browser.get("http://44.213.60.56:3001/")
+browser.get("http://44.213.60.56:3001")
 
 browser.implicitly_wait(0.5)
 
