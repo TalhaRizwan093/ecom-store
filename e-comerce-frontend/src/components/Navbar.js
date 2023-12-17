@@ -28,9 +28,9 @@ const Navbar = ({click}) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <h2>Saqibooooooooooooooooooooooooooooooooooooooo</h2>
+        <h2>Assignment 3 Ecommerce Jenkins</h2>
       </div>
-
+      <h2>Saqibooooo</h2>
       <ul className="navbar__links">
         <li>
           <Link to="/cart" className="cart__link">
