@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 options = Options()
 options.add_argument('--headless')
@@ -70,6 +71,6 @@ print(submit_input)
 # submit = browser.find_element(By.TYPE, "submit")
 # print(submit)
 # submit.click()
-alert = browser.switch_to.alert()
+alert = WebDriverWait(browser, 5).until(EC.alert_is_present)
 alert_text = alert.text
 print(alert_text)
