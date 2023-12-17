@@ -62,8 +62,10 @@ email.send_keys("talha@gmail.com")
 password = browser.find_element(By.NAME, "password")
 password.send_keys("abc123")
 print(password)
-submit = browser.find_element(By.TYPE, "submit")
-print(submit)
+input_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
+print(input_container)
+# submit = browser.find_element(By.TYPE, "submit")
+# print(submit)
 # submit.click()
 # alert = browser.switch_to().alert(); 
 # alertMessage= browser.switch_to().alert().getText();
