@@ -70,6 +70,6 @@ print(submit_input)
 # submit = browser.find_element(By.TYPE, "submit")
 # print(submit)
 # submit.click()
-alert = browser.switch_to_alert()
+alert = browser.switch_to.alert()
 alert_text = alert.text
 print(alert_text)
