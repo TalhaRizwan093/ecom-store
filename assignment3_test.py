@@ -60,5 +60,7 @@ first_name.send_keys("Talha Rizwan")
 email = browser.find_element(By.NAME, "email")
 email.send_keys("talha@gmail.com")
 password = browser.find_element(By.NAME, "password")
-password.send_keys("1234")
+password.send_keys("abc123")
 print(password)
+alert = browser.switchTo().alert(); 
+alertMessage= browser.switchTo().alert().getText();
