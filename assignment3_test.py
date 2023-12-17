@@ -54,3 +54,11 @@ signUp_title = signUp_container[0]
 signUp_title = signUp_title.find_elements(By.TAG_NAME, "p")
 print(signUp_title)
 assert signUp_title[0].text == "Signup"
+
+first_name = browser.find_element(By.ID, "fname")
+first_name.send_keys("Talha Rizwan")
+email = browser.find_element(By.NAME, "email")
+email.send_keys("talha@gmail.com")
+password = browser.find_element(By.NAME, "password")
+password.send_keys("1234")
+print(password)
