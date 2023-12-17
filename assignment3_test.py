@@ -49,3 +49,8 @@ print(signIn_title)
 assert signIn_title[0].text == "Sign In"
 signUp_button = browser.find_element(By.XPATH, value="//a[@href='/signup']")
 signUp_button.click()
+signUp_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
+signUp_title = signUp_container[0]
+signUp_title = signUp_title.find_elements(By.TAG_NAME, "p")
+print(signUp_title)
+assert signUp_title[0].text == "Signup"
