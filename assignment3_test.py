@@ -23,26 +23,6 @@ browser.implicitly_wait(0.5)
 title_web_nav = browser.find_element(By.CLASS_NAME, "navbar__logo")
 title_web = title_web_nav.find_elements(By.TAG_NAME, "h2")
 
-
-
-# first_name = browser.find_element(By.ID, "input-firstname")
-# last_name = browser.find_element(By.ID, "input-lastname")
-# telephone = browser.find_element(By.ID, "input-telephone")
-# email = browser.find_element(By.ID, "input-email")
-# password = browser.find_element(By.ID, "input-password")
-# password_confirm = browser.find_element(By.ID, "input-confirm")
-# terms = browser.find_element(By.XPATH, value="//label[@for='input-agree']")
-# continue_button = browser.find_element(By.XPATH, value="//input[@value='Continue']")
-
-# first_name.send_keys("FFirstName")
-# last_name.send_keys("LLastName")
-# email.send_keys("sample-email1@data.com")
-# telephone.send_keys("+351999888888")
-# password.send_keys("12345678")
-# password_confirm.send_keys("12345678")
-# terms.click()
-# continue_button.click()
-
 print(title_web[0].text)
 assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
 
@@ -72,9 +52,7 @@ inputs = input_container.find_elements(By.TAG_NAME, "input")
 submit_input = inputs[3]
 submit_input.click()
 print(submit_input)
-# submit = browser.find_element(By.TYPE, "submit")
-# print(submit)
-# submit.click()
+
 alert = WebDriverWait(browser, 5).until(EC.alert_is_present())
 alert_text = alert.text
 print(alert_text)
