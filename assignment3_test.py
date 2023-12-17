@@ -96,5 +96,5 @@ print(nav_links_logout_li)
 nav_links_logout = nav_links_logout_li[2]
 print(nav_links_logout)
 nav_links_logout_text = nav_links_logout.find_elements(By.TAG_NAME, "p")
-print(nav_links_logout_text[0].text)
+print(nav_links_logout_text.text)
 
