@@ -74,3 +74,10 @@ print(submit_input)
 alert = WebDriverWait(browser, 5).until(EC.alert_is_present())
 alert_text = alert.text
 print(alert_text)
+assert alert_text == "Sucessfully account opened"
+browser.get("http://44.213.60.56:3001/signin")
+signIn_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
+signIn_title = signIn_container[0]
+signIn_title = signIn_title.find_elements(By.TAG_NAME, "p")
+print(signIn_title)
+assert signIn_title[0].text == "Sign In"
