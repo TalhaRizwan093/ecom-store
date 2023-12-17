@@ -30,7 +30,6 @@ const Navbar = ({click}) => {
       <div className="navbar__logo">
         <h2>Assignment 3 Ecommerce Jenkins</h2>
       </div>
-      <h2>Saqibooooo</h2>
       <ul className="navbar__links">
         <li>
           <Link to="/cart" className="cart__link">
