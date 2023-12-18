@@ -25,7 +25,7 @@ const HomeScreen = () => {
 
   return (
     <div className="homescreen">
-      <h2 className="homescreen__title">New Products: Test</h2>
+      <h2 className="homescreen__title">New Products: Update</h2>
       <div className="homescreen__products">
         {loading ? (
           <h2>Loading...</h2>
