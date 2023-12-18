@@ -16,7 +16,7 @@ browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opt
 
 time.sleep(10)
 
-browser.get("http://44.213.60.56:3001")
+browser.get("http://18.207.136.96:3001")
 
 browser.implicitly_wait(0.5)
 
@@ -26,7 +26,7 @@ title_web = title_web_nav.find_elements(By.TAG_NAME, "h2")
 print(title_web[0].text)
 assert title_web[0].text == "Assignment 3 Ecommerce Jenkins"
 
-browser.get("http://44.213.60.56:3001/signin")
+browser.get("http://18.207.136.96:3001/signin")
 signIn_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title = signIn_title.find_elements(By.TAG_NAME, "p")
@@ -58,7 +58,7 @@ alert_text = alert.text
 print(alert_text)
 assert alert_text == "Sucessfully account opened "
 alert.accept()
-browser.get("http://44.213.60.56:3001/signin")
+browser.get("http://18.207.136.96:3001/signin")
 signIn_container = browser.find_elements(By.CLASS_NAME, "innerContainer")
 signIn_title = signIn_container[0]
 signIn_title = signIn_title.find_elements(By.TAG_NAME, "p")
